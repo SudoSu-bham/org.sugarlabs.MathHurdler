@@ -1,0 +1,26 @@
+diff --git a/activity/activity.info b/activity/activity.info
+index 75d10e3..b545b93 100644
+--- a/activity/activity.info
++++ b/activity/activity.info
+@@ -1,7 +1,18 @@
+ [Activity]
+ name = Math Hurdler
+-bundle_id = edu.rit.math-hurdler
++bundle_id = org.sugarlabs.MathHurdler
+ exec = sugar-activity3 math_hurdlerActivity.MathHurdlerActivity
+ icon = activity-math-hurdler
+ activity_version = 4
+-license = MIT License
++release_date = 2024-07-21
++license = GPLv3+
++metadata_license = CC0-1.0
++summary = Math game aligns with fourth grade Common Core
++description = A game designed to help teach children math in accordance with the Common Core standard for fourth grade students.
++tags = Game
++url = https://github.com/sugarlabs/math-hurdler
++repository = https://github.com/sugarlabs/math-hurdler.git
++update_contact = tch@sugarlabs.org
++developer_name = Sugar Labs Community
++developer_id = org.sugarlabs
++screenshots = https://github.com/sugarlabs/math-hurdler/blob/master/screenshots/en/1.png https://github.com/sugarlabs/math-hurdler/blob/master/screenshots/en/2.png
+\ No newline at end of file
