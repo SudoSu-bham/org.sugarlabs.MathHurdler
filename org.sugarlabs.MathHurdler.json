@@ -62,7 +62,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/sugarlabs/math-hurdler.git",
-                    "commit": "ff855e301a4113107b37a206dd9146ba2d66e67b",
+                    "commit": "6762e69146e756b78839fec4ab25666a07a9690b",
                     "x-checker-data": {
                         "type": "git"
                     }
