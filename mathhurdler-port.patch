@@ -1,30 +1,5 @@
-diff --git a/activity/activity.info b/activity/activity.info
-index 75d10e3..b545b93 100644
---- a/activity/activity.info
-+++ b/activity/activity.info
-@@ -1,7 +1,17 @@
- [Activity]
- name = Math Hurdler
--bundle_id = edu.rit.math-hurdler
-+bundle_id = org.sugarlabs.MathsHurdler
- exec = sugar-activity3 math_hurdlerActivity.MathHurdlerActivity
- icon = activity-math-hurdler
- activity_version = 4
--license = MIT License
-+release_date = 2024-07-21
-+license = GPLv3+
-+metadata_license = CC0-1.0
-+summary = Math game aligns with fourth grade Common Core
-+description = A game designed to help teach children math in accordance with the Common Core standard for fourth grade students.
-+tags = Game
-+url = https://github.com/sugarlabs/math-hurdler
-+repository = https://github.com/sugarlabs/math-hurdler.git
-+update_contact = tch@sugarlabs.org
-+developer_name = Sugar Labs Community
-+developer_id = org.sugarlabs
-\ No newline at end of file
 diff --git a/math_hurdlerActivity.py b/math_hurdlerActivity.py
-index 732dbaf..9719d6c 100644
+index dcf6000..9719d6c 100644
 --- a/math_hurdlerActivity.py
 +++ b/math_hurdlerActivity.py
 @@ -2,9 +2,7 @@ import math_hurdler
@@ -88,14 +63,3 @@ index 732dbaf..9719d6c 100644
          toolbar_box.toolbar.insert(activity_button, -1)
          activity_button.show()
  
-@@ -77,6 +85,10 @@ class MathHurdlerActivity(sugar3.activity.activity.Activity):
-         stop_button = StopButton(self)
-         toolbar_box.toolbar.insert(stop_button, -1)
-         stop_button.show()
-+        stop_button.connect('clicked', self._stop_cb)
-+
-+    def _stop_cb(self, button):
-+        self.game.running = False
- 
-     def _stop_play_cb(self, button):
-         # Pause or unpause the game.
