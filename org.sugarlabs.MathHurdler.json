@@ -75,6 +75,10 @@
                 {
                     "type": "patch",
                     "path": "mathhurdler-info.patch"
+                },
+                {
+                    "type": "patch",
+                    "path":"mathhurdler-monitors.patch"
                 }
             ],
             "post-install": [

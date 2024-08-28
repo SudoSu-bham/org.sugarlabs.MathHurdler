@@ -1,0 +1,39 @@
+diff --git a/math_hurdlerActivity.py b/math_hurdlerActivity.py
+index dcf6000..7da1d4d 100644
+--- a/math_hurdlerActivity.py
++++ b/math_hurdlerActivity.py
+@@ -14,6 +14,8 @@ import gi
+ gi.require_version('Gtk', '3.0')
+ from gi.repository import Gtk
+ 
++from sugar3.graphics.style import GRID_CELL_SIZE
++from sugarapp.helpers import PrimaryMonitor
+ 
+ class MathHurdlerActivity(sugar3.activity.activity.Activity):
+     def __init__(self, handle):
+@@ -28,18 +30,23 @@ class MathHurdlerActivity(sugar3.activity.activity.Activity):
+         self.build_toolbar()
+ 
+         # Build the Pygame canvas.
+-        self._pygamecanvas = sugargame.canvas.PygameCanvas(
++        self.game.canvas = sugargame.canvas.PygameCanvas(
+             self, main=self.game.run)
+ 
+         # Note that set_canvas implicitly calls read_file when
+         # resuming from the Journal.
+-        self.set_canvas(self._pygamecanvas)
++        self.game.canvas.grab_focus()
++        self.set_canvas(self.game.canvas)
+ 
+         # Start the game running (self.game.run is called when the
+         # activity constructor returns).
+         # Deprecated:Not required in sugargame v0.12
+         # self._pygamecanvas.run_pygame(self.game.run)
+ 
++        w = PrimaryMonitor.width()
++        h = PrimaryMonitor.height()
++        self.game.canvas.set_size_request(w, h-GRID_CELL_SIZE)
++
+     def build_toolbar(self):
+         toolbar_box = ToolbarBox()
+         self.set_toolbar_box(toolbar_box)
